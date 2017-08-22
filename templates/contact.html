@@ -1,0 +1,54 @@
+@@include('./layout/head.html')
+
+<body>
+    @@include('./modules/header.html')
+    <main class="wrapper">
+        <div class="main-column">
+            <img src="images/contact-img.jpg" class="pos-pic" alt="image description">
+        </div>
+        <div class="main-column spacings textbox">
+            <section class="content">
+                <div class="contact-textbox">
+                    <h1>Контактные данные</h1>
+                    <div class="contact-holder">
+                        <p>РФ, 620144, Свердловская область, г. Екатеринбург, ул. Союзная, д. 8</p>
+                        <p>Телефон: (343) 286-74-04</p>
+                        <p>Факс: (343) 286-74-05</p>
+                        <p>E-mail: <a href="mailto:tkuraltranzit@mail.ru">tkuraltranzit@mail.ru</a></p>
+                    </div>
+                </div>
+                <form action="#" id="form">
+                    <div class="contact-form">
+                        <div class="heading">
+                            <a href="#" class="btn-close"></a>
+                        </div>
+                        <h2>Заказ звонка менеджера</h2>
+                        <div class="call-form">
+                            <div class="row">
+                                <label for="name" class="txt-label">Ваше имя</label>
+                                <input type="text" class="txt-input" id="name">
+                            </div>
+                            <div class="row">
+                                <label for="phone" class="txt-label">Телефон</label>
+                                <input type="tel" class="txt-input" id="phone">
+                            </div>
+                            <div class="row row-check">
+                                <input type="checkbox" class="checkbox" id="agree">
+                                <label for="agree">Я согласен на обработку моих персональных данных</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-holder">
+                        <button type="submit" class="btn order-call">Заказать звонок менеджера</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    @@include('./modules/footer.html')
+    <script>
+        $('#menu li:last-child a').addClass('active');
+    </script>
+</body>
+</html>

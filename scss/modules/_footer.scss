@@ -1,0 +1,55 @@
+.footer {
+    padding: 10px;
+    overflow: hidden;
+    p {
+        font-size: 0.8em;
+        float: right;
+        margin: 0;
+        padding-top: 1em;
+    }
+}
+.error-page {
+    .footer {
+        margin-top: -48px;
+        position: relative;
+    }
+}
+.phone {
+    float: left;
+    font-size: 1.8em;
+    line-height: 1.1;
+    span {
+        font-size: 0.6em;
+    }
+}
+@media ($mobile) {
+    .footer {
+        p {
+            display: none;
+        }
+    }
+}
+@media ($tablet) {
+    .error-page {
+        .footer {
+            margin-top: -56px;
+        }
+    }
+}
+@media ($desktop) {
+    .error-page {
+        .footer {
+            margin-top: -76px;
+        }
+    }
+    .footer {
+        position: absolute;
+        left: 0;
+        padding: 20px 25px;
+        width: 100%;
+        bottom: 0;
+    }
+    .phone {
+        color: $light-white;
+    }
+}

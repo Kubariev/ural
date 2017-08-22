@@ -1,0 +1,68 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 10;
+}
+#logo {
+    float: left;
+    max-width: 9em;
+    a {
+        display: block;
+        cursor: pointer;
+    }
+    img {
+        width: 100%;
+    }
+}
+#menu {
+    float: right;
+    background: $white;
+    padding: 20px 20px 20px 10px;
+    margin: -10px -10px 0 0;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    a {
+        display: inline-block;
+        border-bottom: 4px solid transparent;
+        &:hover,
+        &.active {
+            color: $blue;
+            text-decoration: none;
+            border-bottom-color: $blue;
+        }
+    }
+}
+
+@media ($mobile) {
+    #menu {
+        padding-bottom: 15px;
+        li {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+}
+@media ($desktop) {
+    .header {
+        padding: 20px 25px;
+    }
+    #logo {
+        padding-top: 5px;
+    }
+    #menu {
+        background: none;
+        padding: 0;
+        margin: 0;
+        li {
+            margin-left: 30px;
+        }
+    }
+}

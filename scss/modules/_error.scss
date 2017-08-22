@@ -1,0 +1,35 @@
+.error-page {
+    color: $white;
+    .wrapper {
+        min-height: 100vh;
+        background: url("/images/bg-error-page.jpg") no-repeat 50%;
+        background-size: cover;
+        padding: 160px 20% 60px 10px;
+        h1 {
+            font-size: 2.8em;
+            line-height: 1;
+            margin-bottom: 0.8em;
+        }
+        a {
+            color: $white;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+@media ($tablet) {
+    .error-page {
+        .wrapper {
+            padding: 160px 10% 60px 40%;
+        }
+    }
+}
+@media ($desktop) {
+    .error-page {
+        .wrapper {
+            padding: 220px 20% 80px 50%;
+        }
+    }
+}

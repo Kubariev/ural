@@ -1,0 +1,214 @@
+.catalog-list {
+    padding-top: 1em;
+    li {
+        position: relative;
+        margin-bottom: 1em;
+        a:hover {
+            color: $blue;
+            text-decoration: none;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0.75em;
+                left: -5em;
+                margin-top: -2px;
+                height: 4px;
+                width: 4.5em;
+                background: $orange;
+            }
+        }
+        &.active {
+            a {
+                color: $blue;
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0.75em;
+                    left: -5em;
+                    margin-top: -2px;
+                    height: 4px;
+                    width: 4.5em;
+                    background: $orange;
+                }
+            }
+        }
+    }
+}
+.catalog-items {
+    position: absolute;
+    top: 220px;
+    left: 10px;
+    z-index: 10;
+    li {
+        margin-bottom: 14px;
+        &.active,
+        &:hover {
+            a {
+                &:after {
+                    background: $white;
+                }
+                &:before {
+                    display: none;
+                }
+            }
+        }
+        a {
+            padding-left: 5em;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                height: 2px;
+                width: 4.5em;
+                background: #878c90;
+            }
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                opacity: .2;
+                right: 0;
+                height: 25px;
+                width: 25px;
+                background: $black;
+            }
+        }
+    }
+}
+.contact-wrap {
+    position: relative;
+}
+.fullscreen-close {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 4em;
+    width: 76px;
+    height: 76px;
+    z-index: 10;
+    margin-top: -76px;
+    cursor: pointer;
+    overflow: hidden;
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 36px;
+        left: -10px;
+        width: 100px;
+        height: 2px;
+        background: $orange;
+    }
+    &:before {
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    &:after {
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+}
+
+.fullscreen {
+    .fullscreen-close {
+        display: block;
+    }
+    .call-form .txt-input {
+        border-bottom-color: $white;
+    }
+    .contact-form h2,
+    .call-form .txt-label {
+        color: $white;
+    }
+    .call-form .row.row-check label {
+        color: $white;
+        &:before {
+            border-color: $white;
+        }
+        &:after {
+            background-position: -53px -7px;
+        }
+    }
+    .btn-close:before, .btn-close:after {
+        background: $white;
+    }
+    .main-column {
+        width: 100%;
+        h1 {
+           color: $white;
+        }
+    }
+    .main-column + .main-column {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 50%;
+    }
+    .contact-holder {
+        transition: opacity 0.5s;
+        opacity: 0;
+    }
+    .btn {
+        color: $white;
+        border-color: $white;
+    }
+    #menu {
+        a {
+            color: $white;
+            &:hover,
+            &.active {
+                color: $white;
+                border-bottom-color: $white;
+            }
+        }
+    }
+    .footer p {
+        color: $white;
+        a {
+            color: $white;
+        }
+    }
+}
+
+@media ($tablet) {
+    .error-page {
+        .wrapper {
+            padding: 160px 10% 60px 40%;
+        }
+    }
+}
+@media ($desktop) {
+    .catalog-items {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .error-page {
+        .wrapper {
+            padding: 220px 20% 80px 50%;
+        }
+    }
+    .fullscreen {
+        .pos-pic {
+            position: relative;
+            width: 100%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .call-form .row.row-check label {
+            &:after {
+                background-position: -32px -10px;
+            }
+        }
+    }
+}

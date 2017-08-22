@@ -1,0 +1,51 @@
+@@include('./layout/head.html')
+
+<body>
+    @@include('./modules/header.html')
+    <main class="wrapper">
+        <div class="main-column">
+            <a href="some1.html" class="catalog-item-link"><img src="images/about-company.jpg" class="pos-pic" alt="image description"></a>
+        </div>
+        <div class="main-column spacings textbox">
+            <section class="content">
+                <h1>Спецтехника и оборудование в аренду</h1>
+                <ul class="catalog-list">
+                    <li class="active"><a href="some1.html" data-img="images/about-company.jpg">Буровая установка (Стронг-Гидро60-шасси на лыжах)</a></li>
+                    <li><a href="some2.html" data-img="images/img-catalog-item01.jpg">Буровая установка УРБ-2А2 на шасси Урал с компрессором Airman PDS265S</a></li>
+                    <li><a href="some3.html" data-img="images/img-catalog-item02.jpg">Грузовой фургон УАЗ 390995</a></li>
+                    <li><a href="some4.html" data-img="images/img-catalog-item03.jpg">Гусеничный снегоболотоход ГАз-34039-32</a></li>
+                    <li><a href="some5.html" data-img="images/about-documents.jpg">Контейнер б/у 40 фут</a></li>
+                    <li><a href="some6.html" data-img="images/about-geography.jpg">Кран-манипулятор а/м 658611-0000306-06 с ИнМан</a></li>
+                    <li><a href="some7.html" data-img="images/main-img-l.jpg">Малогабаритная буровая установка на воду с гидроприводом US-60</a></li>
+                    <li><a href="some8.html" data-img="images/main-img-r.jpg">Машина бурильно-крановая БМГ-300 (буровая установка УРБ-2А2(М) усиленная мачта, усиленная каретка)</a></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    @@include('./modules/footer.html')
+    <script>
+
+        var isTouchDevice = 'ontouchstart' in document.documentElement;
+        if( !isTouchDevice ) {
+            $('.catalog-list a').hover(function(e) {
+                let thisHref = $(this).attr('href'),
+                        thisImg = $(this).attr('data-img'),
+                        relatedLink = $('.catalog-item-link'),
+                        liArray = $('.catalog-list li');
+
+                liArray.each(function () {
+                    $(this).removeClass('active');
+                });
+
+                $(this).parent().addClass('active');
+                if (thisHref !== relatedLink.attr('href')){
+                    relatedLink.attr('href', thisHref).find('.pos-pic').attr('src', thisImg);
+                }
+            });
+        }
+        $('#menu li:first-child a').addClass('active');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "Technal",
+  "version": "0.0.0",
+  "authors": [
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "_site"
+  ],
+  "dependencies": {
+    "susy": "~2.2.2"
+  },
+  "devDependencies": {}
+}

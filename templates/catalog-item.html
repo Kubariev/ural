@@ -1,0 +1,74 @@
+@@include('./layout/head.html')
+
+<body>
+    @@include('./modules/header.html')
+    <main class="wrapper">
+        <nav class="tabs catalog-items">
+            <ul>
+                <li><a href="#pic-item01"><img src="images/pic-item01.jpg" alt="image description"></a></li>
+                <li><a href="#pic-item02"><img src="images/pic-item02.jpg" alt="image description"></a></li>
+            </ul>
+        </nav>
+
+        <div class="main-column">
+            <div id="pic-item01" class="tab-content">
+                <a href="#" class="catalog-item"><img src="images/img-catalog-item01.jpg" class="pos-pic" alt="image description"></a>
+            </div>
+            <div id="pic-item02" class="tab-content">
+                <a href="#" class="catalog-item"><img src="images/img-catalog-item02.jpg" class="pos-pic" alt="image description"></a>
+            </div>
+        </div>
+        <div class="main-column spacings textbox">
+            <section class="content">
+                <div class="contact-textbox">
+                    <h1>Буровая установка УРБ-2А2 на шасси Урал с компрессором Airman PDS265S</h1>
+                    <div class="contact-wrap">
+                        <span class="fullscreen-close"></span>
+                        <div class="contact-holder">
+                            <p>Предназначена для бурения геофизических и структурно поисковых скважин на нефть и газ, разведка месторождений твердых полезных ископаемых, строительных материалов и подземных вод, инженерно-геологических изысканий, бурения водозаборных и взрывных скважин. Бурение производится вращательным способом с промывкой или продувкой скважины или шнеками.</p>
+                            <p>Стоимость аренды — 10 000 рублей в сутки.</p>
+                            <p>Внимание: установка в аренде до 31.10.2017.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <div class="heading">
+                        <a href="#" class="btn-close"></a>
+                    </div>
+                    <h2>Заказ звонка менеджера</h2>
+                    <form action="#" class="call-form">
+                        <div class="row">
+                            <label for="name" class="txt-label">Ваше имя</label>
+                            <input type="text" class="txt-input" id="name">
+                        </div>
+                        <div class="row">
+                            <label for="phone" class="txt-label">Телефон</label>
+                            <input type="tel" class="txt-input" id="phone">
+                        </div>
+                        <div class="row row-check">
+                            <input type="checkbox" class="checkbox" id="agree">
+                            <label for="agree">Я согласен на обработку моих персональных данных</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="btn-holder">
+                    <a class="btn order-call">Заказать звонок менеджера</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    @@include('./modules/footer.html')
+    <script>
+        $('#menu li:first-child a').addClass('active');
+        if ($(window).width() >=1024){
+            $('.catalog-item').click(function () {
+                $('body').addClass('fullscreen');
+            })
+            $('.fullscreen-close').click(function () {
+                $('body').removeClass('fullscreen');
+            })
+        }
+    </script>
+</body>
+</html>

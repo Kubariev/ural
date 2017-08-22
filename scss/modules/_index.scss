@@ -1,0 +1,113 @@
+.wrapper {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.pos-pic {
+    width: 100%;
+}
+.main-column {
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    &.textbox {
+        min-height: 100px;
+    }
+}
+.pos-pic {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title {
+    padding: 15px;
+    margin: 0;
+    line-height: 1.2;
+    color: $orange;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 18%;
+    right: 18%;
+    z-index: 10;
+    a {
+        position: relative;
+        color: $link-color;
+        text-decoration: underline;
+        span {
+            color: $orange;
+        }
+        &:hover {
+            background: $link-color;
+            text-decoration: none;
+            span {
+                color: $white;
+            }
+        }
+    }
+}
+@media ($mobile) {
+    .main-column {
+        min-height: 100px;
+    }
+    .pos-pic {
+        position: relative;
+        top: 0;
+        transform: none;
+    }
+}
+@media ($desktop) {
+    .wrapper {
+        height: 100%;
+    }
+    .main-column {
+        float: left;
+        width: 50%;
+        overflow: hidden;
+        min-height: 100vh;
+        height: 100vh;
+        &.spacings {
+            padding: 60px 0;
+        }
+    }
+    .pos-pic {
+        min-height: 100%;
+        width: auto;
+        position: relative;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .main-title {
+        font-size: 2.8vw;
+        position: fixed;
+        padding: 0;
+        a {
+            padding-right: 5px;
+            white-space: nowrap;
+            position: relative;
+            text-decoration: none;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left:-5px;
+                width: 101%;
+                background: $link-color;
+                height: 0.5em;
+                z-index: -1;
+            }
+            &:hover {
+                &:after {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media ($wide-desktop) {
+    .pos-pic {
+        width: 100%;
+    }
+}

@@ -1,0 +1,156 @@
+.contact-holder {
+    padding: 2em 0;
+}
+.contact-form {
+    display: none;
+    .heading {
+        width: 100%;
+        margin-bottom: 2em;
+        overflow: hidden;
+    }
+    h2 {
+        font-size: 2.8em;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+}
+.show-form {
+    .contact-textbox {
+        display: none;
+    }
+    .contact-form {
+        display: block;
+    }
+}
+.call-form {
+    padding: 2em 0;
+    .row {
+        padding: 0 0 0 5em;
+        margin-bottom: 2em;
+        &.row-check {
+            position: relative;
+            padding-left: 0;
+            padding-top: 0.5em;
+            label {
+                display: inline-block;
+                vertical-align: top;
+                position: relative;
+                line-height: 1.22222em;
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 1.2222em;
+                    height: 1.2222em;
+                    margin-right: 0.8em;
+                    border: 1px solid $link-color;
+                }
+                &:after {
+                    content: '';
+                    display: none;
+                    position: absolute;
+                    top: -1px;
+                    left: 0.3em;
+                    width: 18px;
+                    height: 14px;
+                    background: url("../images/sprite.png") no-repeat -53px -7px;
+                    background-size: 150px;
+                }
+            }
+            .checkbox:checked + label:after {
+                display: block;
+            }
+        }
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+    .txt-label {
+        float: left;
+        width: 5em;
+        margin-left: -5em;
+    }
+    .txt-input {
+        width: 100%;
+        padding: 3px;
+        border: 1px solid $orange;
+        border-width: 0 0 1px;
+        outline: none;
+    }
+    .checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        visibility: hidden;
+    }
+}
+.btn-close {
+    float: right;
+    width: 19px;
+    height: 19px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 9px;
+        left: 0;
+        width: 22px;
+        height: 2px;
+        background: $link-color;
+    }
+    &:before {
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+    &:after {
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+}
+.call-form {
+    width: 100%;
+    overflow: hidden;
+}
+@media ($desktop) {
+    .show-form {
+        #menu,
+        .footer p {
+            display: none;
+        }
+        .header,
+        .footer {
+            width: 50%;
+        }
+    }
+    .btn-close {
+        width: 38px;
+        height: 38px;
+        &:before,
+        &:after {
+            top: 18px;
+            left: -5px;
+            width: 50px;
+        }
+    }
+    .call-form {
+        .row {
+            &.row-check {
+                label:after {
+                    width: 24px;
+                    height: 18px;
+                    background: url("../images/sprite.png") no-repeat -72px -10px;
+                    background-size: 200px;
+                }
+            }
+        }
+    }
+}
